@@ -1,40 +1,51 @@
+
+html {
+    color-scheme: light dark;
+}
+
 body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
-    font: 100%/1.5 system-ui;
-    display: block;
-    margin: 8px;
-    max_width: 100ch;
-    
+    font-family: Arial, sans-serif;
+    max-width: 100ch;
+    margin-inline: auto;
 }
 
 nav {
     display: flex;
-    text-decoration: none;
-    color: inherit;
+    margin-bottom: 2em;
+    --border-color: oklch(50% 10% 200 / 40%);
+}
+
+nav a {
+    flex: 1;
     text-align: center;
     padding: 0.5em;
-    margin-bottom: 20ch;
-    border-bottom: 1px solid oklch(80% 3% 200);
-}
-
-nav a.current {
-    flex: 1;
-    border-bottom: 0.4em solid oklch(70% 3% 200);
-    padding-bottom: 0.1em;
-
-}
-
-
-:root {
-    --color-accent: oklch(65% 50% 0);
-}
-
-html {
-    accent-color: var(--color-accent);
+    border-bottom: 0.4em solid var(--border-color);
+    text-decoration: none;
+    color: inherit;
 }
 
 nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
+    border-bottom-color: oklch(65% 50% 0);
+    background-color: color-mix(
+        in oklch,
+        oklch(65% 50% 0),
+        canvas 85%
+    );
+}
+
+nav a.current {
+    border-bottom-color: oklch(65% 50% 0);
+    font-weight: bold;
+}
+
+
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+}
+
+.color-scheme select {
+    font: inherit;
 }
