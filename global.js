@@ -5,7 +5,6 @@ function $$(selector, context = document) {
     return Array.from(context.querySelectorAll(selector));
 }
 
-// Step 3: Automatic navigation
 
 const BASE_PATH = (
     location.hostname === "localhost" ||
@@ -50,7 +49,7 @@ for (let p of pages) {
     nav.append(a);
 }
 
-// Step 4: Dark mode
+// Dark mode
 
 document.body.insertAdjacentHTML(
     "afterbegin",
