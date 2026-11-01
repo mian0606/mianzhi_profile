@@ -49,3 +49,74 @@ nav a.current {
 .color-scheme select {
     font: inherit;
 }
+
+.project-year {
+    color: gray;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    flex: 1;
+    min-width: 9em;
+    list-style: none;
+    border: 1px solid gray;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin-block: 1em;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    cursor: pointer;
+}
+
+.swatch {
+    display: inline-block;
+    width: 1em;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.2em;
+    background-color: var(--color);
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+#projects-pie-plot path {
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+
+    &:is(path) {
+        fill: var(--color);
+    }
+}
+
+.searchBar {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em;
+    font: inherit;
+}
